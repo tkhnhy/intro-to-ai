@@ -1,5 +1,5 @@
 from alphabeta import TicTacToe
-from alphabeta import alpha_beta_value
+from alphabeta import alpha_beta_value_track
 
 
 def play(state):
@@ -8,7 +8,7 @@ def play(state):
     """
     if state.is_end_state():
         return
-    value, next_move  = alpha_beta_value(state)
+    value, next_move  = alpha_beta_value_track(state)
     print(next_move)
 
     play(next_move)
@@ -22,8 +22,8 @@ def main():
     max_value(node, alpha, beta): implements the MinMax algorithm with alpha-beta pruning
     min_value(node, alpha, beta):implements the MinMax algorithm with alpha-beta pruning
     """
-    #empty_board = 3 * '???'
-    empty_board = 'oox?x?ox?'
+    empty_board = 3 * '???'
+    #board = 'oox?x?ox?'
     state = TicTacToe(empty_board, True)
     print(state)
     play(state)

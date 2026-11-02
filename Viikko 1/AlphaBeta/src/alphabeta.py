@@ -83,23 +83,64 @@ class TicTacToe(AlphaBetaNode):
 
         return 0
 
-
 def alpha_beta_value(node):
     """Implements the MinMax algorithm with alpha-beta pruning
     :param node: State of the game (TicTacToe)
     :return: int
     """
     if node.is_max_node():
-        value, best_child = max_value(node, -1, 1)
-        return value, best_child
+        value = max_value(node, -1, 1)
+        return value
         
     else:
-        value, best_child = min_value(node, -1, 1)
-        return value, best_child
+        value = min_value(node, -1, 1)
+        return value
     
 
 
 def max_value(node, alpha, beta):
+    v = -HUGE_NUMBER
+    
+    if node.is_end_state():
+        return node.value()
+    
+    for child in node.generate_children():
+        v = max(v, min_value(child, alpha, beta))
+        alpha = max(alpha, v)
+        if alpha >= beta:
+            return v
+
+    return v
+
+
+def min_value(node, alpha, beta):
+    v = HUGE_NUMBER
+    
+    if node.is_end_state():
+        return node.value()
+    
+    for child in node.generate_children():
+        v = min(v, max_value(child, alpha, beta))
+        beta = min(beta, v)
+        if alpha >= beta:
+            return v
+
+    return v
+
+def alpha_beta_value_track(node):
+    """Implements the MinMax algorithm with alpha-beta pruning
+    :param node: State of the game (TicTacToe)
+    :return: tuple (int, TicTacToe or None)
+    """
+    if node.is_max_node():
+        value, best_child = max_value_track(node, -1, 1)
+        return value, best_child
+        
+    else:
+        value, best_child = min_value_track(node, -1, 1)
+        return value, best_child
+
+def max_value_track(node, alpha, beta):
     v = -HUGE_NUMBER
     best_child = None
     
@@ -108,7 +149,7 @@ def max_value(node, alpha, beta):
     
     for child in node.generate_children():
         prev_v = v
-        v = max(v, min_value(child, alpha, beta)[0])
+        v = max(v, min_value_track(child, alpha, beta)[0])
         if v > prev_v:
             best_child = child
         alpha = max(alpha, v)
@@ -118,7 +159,7 @@ def max_value(node, alpha, beta):
     return (v, best_child)
 
 
-def min_value(node, alpha, beta):
+def min_value_track(node, alpha, beta):
     v = HUGE_NUMBER
     best_child = None
     
@@ -127,7 +168,7 @@ def min_value(node, alpha, beta):
     
     for child in node.generate_children():
         prev_v = v
-        v = min(v, max_value(child, alpha, beta)[0])
+        v = min(v, max_value_track(child, alpha, beta)[0])
         if v < prev_v:
             best_child = child
         beta = min(beta, v)
