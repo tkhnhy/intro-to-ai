@@ -1,1 +1,1 @@
-[{"name": "test.test_main.MainTest.test_empty_board", "status": "passed", "message": "", "passed": true, "points": ["AlphaBeta"], "backtrace": []}, {"name": "test.test_main.MainTest.test_o_advantage", "status": "passed", "message": "", "passed": true, "points": ["AlphaBeta"], "backtrace": []}, {"name": "test.test_main.MainTest.test_x_advantage", "status": "passed", "message": "", "passed": true, "points": ["AlphaBeta"], "backtrace": []}]
+[]

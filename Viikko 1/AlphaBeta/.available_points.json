@@ -1,1 +1,1 @@
-{}
+{"test.test_main.MainTest.test_empty_board": ["AlphaBeta"], "test.test_main.MainTest.test_o_advantage": ["AlphaBeta"], "test.test_main.MainTest.test_x_advantage": ["AlphaBeta"]}
