@@ -1,0 +1,6 @@
+1. Total number of events = k^4 
+One less to consider the probabilities we have to consider = (k^4) - 1 
+
+2. 4(k-1)  parameters
+
+3. In full joint distribution = k^4-1
