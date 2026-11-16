@@ -1,0 +1,12 @@
+First determine what β0 makes the most sense.
+
+Since β0 is the intercept, which is the point where regression line crosses the y axis
+We can see from the figure, that as temperature gets lower, the thickness gets higher, so 252 makes the most sense
+
+Next β1
+
+β1 is the slope, since we can see that the line goes downwards we know it is negative, so out of the options its -0.9
+
+Lastly σ̂  we can see that the points are relatively close to the fitted line, clearly not 36 points at a time, so  3.6 is the most fitting
+
+So C is the correct estimate
