@@ -23,6 +23,6 @@ clf = MLPClassifier(
     random_state=1,
 )
 clf.fit(X_train, y_train)
-print("Validation accuracy:", clf.score(X_val, y_val))
+#print("Validation accuracy:", clf.score(X_val, y_val))
 # After choosing a configuration using validation results only:
-# print("Final test accuracy:", selected_clf.score(X_test, y_test))
+print("Final test accuracy:", clf.score(X_test, y_test))

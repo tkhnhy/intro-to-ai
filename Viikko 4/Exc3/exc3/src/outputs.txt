@@ -13,3 +13,6 @@ Validation accuracy: 0.933125
 
 4. Training iterations helped the most, decreasing layer size obviously hurts, increasing layers helps less. More iterations help because it gives more chances
 to improve the weight, while adding neutrons only increases/decreases the potential of learning
+
+
+Final test accuracy: 0.955 with 3rd conf
