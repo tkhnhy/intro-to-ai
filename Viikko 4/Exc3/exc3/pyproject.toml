@@ -1,0 +1,19 @@
+[project]
+name = "exc3"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "TommiWindows",email = "tommi.kohonen21@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "scikit-learn (>=1.9.1,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "exc3", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

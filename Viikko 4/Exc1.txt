@@ -1,0 +1,5 @@
+1. simple decision boundary, just a straight line training loss higher
+
+2. Decision boundary starts to follow the daita(becomes a circular)
+
+3. Decision boundary becomes even more circular training and test loss a lot lower

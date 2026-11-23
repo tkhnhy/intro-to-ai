@@ -1,0 +1,3 @@
+RelU way slower on 0.03, drop a lot slower with higher learning rate RelU seemed more stable and accurate than tanh
+
+regularisation improved RelU even more(faster/accuracry, also improved tanh with the higher learning rate, still rather unstable
